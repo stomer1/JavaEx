@@ -7,7 +7,37 @@ public class Types {
 	//	floatTypes();
 	//	booleanEx();
 	//	charEx();
-		constantEx();
+	//	constantEx();
+	//	implicitCasting();
+		explicitCasting();
+	}
+	private static void implicitCasting() {
+		//	byte(1) < short(2) < int(4) < long(8)
+		//		< float(4) < double(8)
+		byte b = 10;	//	1바이트 정수형
+		System.out.println("byte:" + b);
+		int i = b;		//	4바이트 정수형
+		System.out.println("int:" + i);
+		long l = i;		//	8바이트 정수형
+		System.out.println("long:" + l);
+		//	자료의 유실 없음
+		float f = l;	//	4바이트 실수형 : 바이트 수는 long보다 작지만 표현 범위가 넓다
+		System.out.println("long -> float:" + f);
+		double d = f;	//	8바이트 실수형
+		System.out.println("float -> double:" + d);
+	}
+	private static void explicitCasting() {
+		byte b;	//	1바이트 정수형
+		int i = 2021;	//	4바이트 정수형
+		float f = 123.456f;	//	4바이트 실수형
+		
+		System.out.println(Integer.toBinaryString(i));
+		
+		b = (byte)i;	//	강제로 캐스팅
+		System.out.println("int " + i + " -> byte " + b);
+		
+		i = (int)f;
+		System.out.println("float " + f + " -> int " + i);
 	}
 	private static void constantEx() {
 		float PI = 3.14159F;
