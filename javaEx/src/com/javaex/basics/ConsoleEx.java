@@ -1,9 +1,29 @@
 package com.javaex.basics;
-
+import java.util.Scanner;
 public class ConsoleEx {
 
 	public static void main(String[] args) {
-		consoleOutputEx();
+//		consoleOutputEx();
+		consoleInputEx();
+	}
+	private static void consoleInputEx() {
+		
+		// 팁1 : Ctrl + Shift + o
+		// 팁2 : 자동 완성 기능 활용 : Ctrl + Space 
+		Scanner scanner = new Scanner(System.in);
+		
+		System.out.println("이름을 입력해 주세요");
+		System.out.print("이름:");
+		
+		String name = scanner.next();
+		
+		System.out.print("나이:");
+		
+		int age = scanner.nextInt();
+		
+		System.out.println("당신의 이름은 " + name + "이고" + age + "살입니다");
+		
+		scanner.close();
 	}
 	private static void consoleOutputEx() {
 		//콘솔 출력
