@@ -19,7 +19,7 @@ public class EnumEx {
 			switch (today) {
 			case MONDAY:
 			case TUESDAY:
-			case WEDNSDAY:
+			case WEDNESDAY:
 			case THURSDAY:
 				act = "열공";
 				break;
