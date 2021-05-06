@@ -35,8 +35,8 @@ public class ColorPoint extends Point {
 	
 		// Override를 해도 부모의 메서드가 지워지는 것은 아니다.
 		// 명시적으로 super 키워드를 이용해 부모의 메서드에 접근할 수 있다.
-		System.out.println("부모의 메서드 호출:");
-		super.draw(show);
+//		System.out.println("부모의 메서드 호출:");
+//		super.draw(show);
 	}
 	
 }
