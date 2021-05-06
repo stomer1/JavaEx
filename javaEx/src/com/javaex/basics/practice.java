@@ -81,9 +81,10 @@ public class practice {
 					if(scoreboard[row][col] >= 85) {
 						total3 += scoreboard[row][col];
 						
-					//	avg1 = total3 / (scoreboard[row][col].length); 
+						avg1 = total3 / scoreboard[row][col].length); 
 						System.out.print(scoreboard[row][col]);
 						System.out.println(total3);
+						System.out.println(avg1);
 					}
 					
 				}
