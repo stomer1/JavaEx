@@ -16,7 +16,7 @@ public class LoopEx {
 		Scanner scanner = new Scanner(System.in);
 		
 		do {
-			System.out.print("숫자를 입력하세요: [0ㅇ면 종료]:");
+			System.out.print("숫자를 입력하세요: [0면 종료]:");
 			value = scanner.nextInt();
 			total += value;
 			
