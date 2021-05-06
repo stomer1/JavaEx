@@ -73,13 +73,17 @@ public class practice {
 					{89, 83, 93, 94, 78 }
 			};
 			int total3 = 0;
-			
+			int avg1 = 0;
 			for(int row = 0; row < scoreboard.length; row++) {
 				for(int col = 0; col < scoreboard[row].length; col++) {
 					System.out.print(scoreboard[row][col] + "\t");
 					
 					if(scoreboard[row][col] >= 85) {
+						total3 += scoreboard[row][col];
+						
+					//	avg1 = total3 / (scoreboard[row][col].length); 
 						System.out.print(scoreboard[row][col]);
+						System.out.println(total3);
 					}
 					
 				}
