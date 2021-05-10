@@ -80,14 +80,18 @@ public class practice {
 					System.out.print(scoreboard[row][col] + "\t");
 					
 					if(scoreboard[row][col] >= 85) {
-						total3 += scoreboard[row][col];
 						count++;
-					//	avg1 = total3 / count); 
+						total3 += scoreboard[row][col];
+						
+					
+						avg1 = (total3 / count); 
+						
 					//	System.out.print(scoreboard[row][col]);
-					//	System.out.println(total3);
-					//	System.out.println(avg1);
+					//	System.out.print(total3);
+					//	System.out.print(avg1);
 						
 					}
+					
 					
 				}
 				System.out.println();
