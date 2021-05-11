@@ -8,7 +8,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 public class CharStreamEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static String filename = rootPath + "test.txt";
 	public static void main(String[] args) {
 		// 텍스트 기록 (Writer)

@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class BufferedStreamEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\"; // 경로 표기를 잘못 하셨습니다.
 	static String source = rootPath + "img.jpg";
 	static String target = rootPath + "img_Buffered_copy.jpg";
 	public static void main(String[] args) {

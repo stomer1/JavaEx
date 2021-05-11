@@ -10,7 +10,7 @@ import java.io.Reader;
 import java.io.Writer;
 
 public class BufferedCharStreamEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static String source = rootPath + "last-leaf.txt";
 	static String target = rootPath + "last-leaf-filtered.txt";
 	public static void main(String[] args) {

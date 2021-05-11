@@ -8,7 +8,7 @@ import java.io.Reader;
 import java.util.StringTokenizer;
 
 public class StringTokenizerEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static String filename = rootPath + "thieves.txt";
 	public static void main(String[] args) {
 		try {

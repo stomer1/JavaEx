@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class ScannerEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static String filename = rootPath + "thieves.txt";
 	public static void main(String[] args) {
 		File file = new File(filename);

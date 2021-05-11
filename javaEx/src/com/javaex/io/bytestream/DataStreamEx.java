@@ -10,7 +10,7 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 public class DataStreamEx {
-	static String rootPath = System.getProperty("user.dir") + "\\files";
+	static String rootPath = System.getProperty("user.dir") + "\\files\\";
 	static String filename = rootPath + "primitives.txt";
 	public static void main(String[] args) {
 		readPrimitives();
