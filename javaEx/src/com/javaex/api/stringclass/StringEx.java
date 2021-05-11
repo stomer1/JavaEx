@@ -3,12 +3,13 @@ package com.javaex.api.stringclass;
 public class StringEx {
 
 	public static void main(String[] args) {
-//		stringBasic();
+		stringBasic();
 //		usefulMethods();
-		StringBufferEx();
+//		StringBufferEx();
 
 	}
 	// 문자열 객체 : 연결, 메서드 수행시 매번 새 String 반환
+	//	StringBuffer : 버퍼 기반으로 작동
 	private static void StringBufferEx() {
 		// 버퍼 생성
 		StringBuffer sb = new StringBuffer("This");

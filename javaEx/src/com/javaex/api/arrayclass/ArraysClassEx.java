@@ -6,10 +6,10 @@ public class ArraysClassEx {
 
 	public static void main(String[] args) {
 //		printArrayEx();
-//		copyArrayEx();
+		copyArrayEx();
 //		sortEx();
 //		sortCustomEx();
-		searchEx();
+//		searchEx();
 	}
 //	배열 내 검색
 	private static void searchEx() {

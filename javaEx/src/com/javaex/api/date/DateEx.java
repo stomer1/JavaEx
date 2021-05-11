@@ -8,8 +8,8 @@ import java.util.Date;
 public class DateEx {
 
 	public static void main(String[] args) {
-//		dateEx();
-		calendarEx();
+		dateEx();
+//		calendarEx();
 	}
 	private static void calendarEx() {
 		// 캘린더 	불러오기
@@ -72,7 +72,8 @@ public class DateEx {
 		System.out.println("FULL:" + df.format(now));
 		df = DateFormat.getDateInstance(DateFormat.MEDIUM);
 		System.out.println("MEDIUM:" + df.format(now));
-		
+		df = DateFormat.getDateInstance(DateFormat.SHORT);
+		System.out.println("SHORT:" + df.format(now));
 		// SimpleDateFormat ->  포멧 문자열을 이용, 자유롭게 날짜 포멧
 		SimpleDateFormat sdf = 
 				new SimpleDateFormat("yyyy년 MM월 dd일 HH시 mm분 ss초");
