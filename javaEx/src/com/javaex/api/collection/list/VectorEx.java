@@ -1,5 +1,6 @@
 package com.javaex.api.collection.list;
 
+import java.util.Enumeration;
 import java.util.Vector;
 
 public class VectorEx {
@@ -39,9 +40,14 @@ public class VectorEx {
 		// 내부 요소들 루프로 접근
 		for ( int i = 0; i < v.size(); i++) {
 			Integer item = (Integer)v.elementAt(i);
-			System.out.println(item + " ");
+			System.out.print(item + " ");
 		}
 		System.out.println();
+		
+		Enumeration e = v.elements();
+		while(e.hasMoreElements()) {
+			System.out.print(e.nextElement() + " ");
+		}
 		// 버퍼 비우기
 		v.clear();
 		System.out.println("v:" + v);
