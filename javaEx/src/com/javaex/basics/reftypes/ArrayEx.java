@@ -4,8 +4,8 @@ public class ArrayEx {
 
 	public static void main(String[] args) {
 //		arrayBasic();
-//		multiDimArray();
-		arrayCopyFor();
+		multiDimArray();
+//		arrayCopyFor();
 //		arrayCopySystem();
 	}
 	private static void arrayCopySystem() {
@@ -58,7 +58,7 @@ public class ArrayEx {
 		
 		for( int row = 0; row < table.length; row++) {
 			for(int col = 0; col < table[row].length; col++) {
-				System.out.print(table[row][col] + "\t");
+	//			System.out.print(table[row][col] + "\t");
 				total += table[row][col];
 			}
 			System.out.println();

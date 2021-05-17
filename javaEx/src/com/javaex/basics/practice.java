@@ -3,6 +3,23 @@ package com.javaex.basics;
 public class practice {
 
 	public static void main(String[] args) {
+		System.out.println("Exception 테스트 시작");
+
+		try {
+		    String test = null;
+		    System.out.println("문자열 길이 = " + test.length());
+		}
+		catch(NullPointerException ne) {
+		    System.out.println("NullPointException");
+		}
+		catch(Exception e) {
+		    System.out.println("Exception");
+		}
+		finally {
+		    System.out.println("finally");
+		}
+		System.out.println("Exception 테스트 종료");
+		
 		arrayCopySystem();
 		multiDimArray();
 		//problem01
