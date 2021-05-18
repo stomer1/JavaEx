@@ -15,7 +15,7 @@ public class AuthorDAOimpl implements AuthorDAO  {
 		try {
 			// 드라이버 로드
 			Class.forName("oracle.jdbc.driver.OracleDriver");
-			String dburl = "jdbc:oracle;thin:@localhost:1521:xe";
+			String dburl = "jdbc:oracle:thin:@localhost:1521:xe";
 			conn = DriverManager.getConnection(dburl,
 					"C##NAMGUNG",
 					"1234");
@@ -39,7 +39,7 @@ public class AuthorDAOimpl implements AuthorDAO  {
 			
 			// 쿼리
 			String sql = "SELECT author_id, author_name, author_desc" +
-			"FROM author";
+			" FROM author";
 			
 			// 쿼리 실행
 			rs = stmt.executeQuery(sql);
@@ -91,7 +91,7 @@ public class AuthorDAOimpl implements AuthorDAO  {
 		try {
 			conn = getConnection();
 			// 실행 계획
-			String sql = "INSERT INTO author VALUES(seq_author_id, ?, ?)";
+			String sql = "INSERT INTO author VALUES(seq_author_id.NEXTVAL, ?, ?)";
 			pstmt = conn.prepareStatement(sql);
 			// 파라미터 바인딩
 			pstmt.setString(1,  vo.getAuthorName());
@@ -115,14 +115,58 @@ public class AuthorDAOimpl implements AuthorDAO  {
 
 	@Override
 	public boolean delete(Long id) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int deletedCount = 0;
+		
+		try {
+			conn = getConnection();
+			String sql = "DELETE FROM author WHERE author_id=?";
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setLong(1, id);
+			
+			deletedCount = pstmt.executeUpdate();
+			
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch (Exception e) {
+				
+			}
+		}
+		return 1 == deletedCount;
 	}
 
 	@Override
 	public boolean update(AuthorVO vo) {
-		// TODO Auto-generated method stub
-		return false;
+		Connection conn = null;
+		PreparedStatement pstmt = null;
+		int updatedCount = 0;
+		
+		try {
+			conn = getConnection();
+			// 실행 계획
+			String sql = "UPDATE author SET author_desc=? WHERE author_id=?";
+			pstmt = conn.prepareStatement(sql);
+			// 파라미터 바인딩
+			pstmt.setString(1, vo.getAuthorDesc());
+			pstmt.setLong(2, vo.getId());
+			
+			updatedCount = pstmt.executeUpdate();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				pstmt.close();
+				conn.close();
+			}catch (Exception e) {
+				
+			}
+		}
+		return 1 == updatedCount;
 	}
 
 }
