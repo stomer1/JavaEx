@@ -10,10 +10,52 @@ public class AuthorApp {
 //		selectAll();
 //		insertAuthor();
 //		updateAuthor();
-		deleteAuthor();
+//		deleteAuthor();
+//		searchAuthor();
+		getAuthorInfo();
+	}
+	private static void getAuthorInfo() {
+		selectAll();
+		// 스캐너로부터 PK 입력 받아 저자 정보 출력
+		Scanner scanner = new Scanner(System.in);
+		System.out.print("저자 아이디:");
+		int id = scanner.nextInt();
+		AuthorDAO dao = new AuthorDAOimpl();
+		AuthorVO vo = dao.get(Long.valueOf(id));
 		
+		if(vo != null) {
+			System.out.printf("%d\t%s\t%s%n",
+					vo.getId(), vo.getAuthorName(), vo.getAuthorDesc());
+			
+		}else {
+			System.out.println("Not Found");
+		}
+		scanner.close();
+	}
+	private static void searchAuthor() {
+		// Scanner에서 키워드 입력 -> 부분 검색
+		Scanner scanner = new Scanner(System.in);
+				selectAll();
+				System.out.print("검색어:");
+				
+				
+				AuthorDAO dao = new AuthorDAOimpl();
+				String keyword = scanner.next();
+				List<AuthorVO> list = dao.search(keyword);
+				
+				Iterator<AuthorVO> it = list.iterator();
+				
+				while(it.hasNext()) {
+					AuthorVO vo = it.next();
+					System.out.printf("%d\t%s\t%s%n",
+							vo.getId(),
+							vo.getAuthorName(),
+							vo.getAuthorDesc());
+				}
+				scanner.close();
 	}
 	private static void deleteAuthor() {
+		//
 		Scanner scanner = new Scanner(System.in);
 		selectAll();
 		System.out.print("삭제할 저자:");
