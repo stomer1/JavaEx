@@ -1,10 +1,14 @@
 package com.javaex.nosql;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import org.bson.Document;
 import org.bson.conversions.Bson;
 
+import com.mongodb.MongoClientSettings;
+import com.mongodb.ServerAddress;
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
 import com.mongodb.client.MongoCollection;
@@ -158,7 +162,18 @@ public class mongodbTest {
 	
 	private static MongoClient connect() {
 		//	몽고 DB 접속
-		MongoClient client = MongoClients.create();
+//		MongoClient client = MongoClients.create();
+		
+		MongoClient client = MongoClients.create(
+				MongoClientSettings.builder()
+					.applyToClusterSettings(builder -> 
+							builder.hosts(
+											Arrays.asList(
+															new ServerAddress(MONGODB_IP, MONGODB_PORT)
+															)
+											)
+							).build()
+					);
 		
 		System.out.println(client);
 		return client;
