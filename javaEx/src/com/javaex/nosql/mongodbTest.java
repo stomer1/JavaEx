@@ -212,8 +212,8 @@ public class mongodbTest {
 		MongoDatabase db = client.getDatabase(databaseName);	//	use javaMongo
 		System.out.println("DATABASE:" + db);
 		//	컬렉션 접속
-		MongoCollection<Document> coll = 
-				db.getCollection(collectionName);
+		MongoCollection<Document> coll =  
+				db.getCollection(collectionName); 
 		System.out.println("COLLECTION:" + coll);
 		return coll;
 	}
